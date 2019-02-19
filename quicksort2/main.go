@@ -7,12 +7,10 @@ import (
 func qsort(a []int) []int {
 	if len(a) < 2 { return a }
 
-//
 
 	biggestnum := a[len(a)/2]
 
 
-	//a[pivotIndex], a[right] = a[right], a[pivotIndex]
 
 
 	var rightslice []int
@@ -29,9 +27,9 @@ func qsort(a []int) []int {
 	}
 
 
-	a = a[:0]
-	a = append(a,biggestnum)
+
 	a = append(append([]int{}, qsort(rightslice)...))
+	a = append(a,biggestnum)
 
 
 
@@ -46,9 +44,9 @@ func printArray(a []int) {
 
 
 func main(){
-	slice := []int{9, 3, -4, 6, -5, 3}
+	slice := []int{9, 3, -4, 6, -5, 4}
 
-	qsort(slice)
-	printArray(qsort(slice))
+	s :=qsort(slice)
+	printArray(s)
 
 }
