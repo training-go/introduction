@@ -10,13 +10,13 @@ func greatestDivisor(a, b int) int {
 	for b != 0 {
 		if a > b {
 			a = a - b
-		} else {
-			b = b - a
+			continue
 		}
+			b = b - a
 	}
 	return a
 }
 
 func main() {
-	fmt.Print(greatestDivisor(63, 9))
+	fmt.Print(greatestDivisor(21, 9))
 }
