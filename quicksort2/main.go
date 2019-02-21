@@ -6,33 +6,22 @@ import (
 
 func qsort(a []int) []int {
 	if len(a) < 2 { return a }
-
-
 	biggestnum := a[len(a)/2]
 
-
-
-
-	var rightslice []int
-	for i := range a {
-		if a[i] > biggestnum {
-			biggestnum = a[i]
+	var rightSlice []int
+	for _, v := range a {
+		if v > biggestnum {
+			biggestnum = v
 		}
 	}
 
 	for i := range a {
 		if a[i] < biggestnum {
-			rightslice = append(rightslice,a[i])
+			rightSlice = append(rightSlice,a[i])
 		}
 	}
-
-
-
-	a = append(append([]int{}, qsort(rightslice)...))
+	a = append(append([]int{}, qsort(rightSlice)...))
 	a = append(a,biggestnum)
-
-
-
 	return a
 }
 
@@ -41,7 +30,6 @@ func printArray(a []int) {
 		fmt.Printf("%d ", a[i])
 	}
 }
-
 
 func main(){
 	slice := []int{9, 3, -4, 6, -5, 4}
