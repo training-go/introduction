@@ -4,37 +4,35 @@ import (
 	"fmt"
 )
 
-func qsort(a []int) []int {
+//Arranges the numbers in a slice from the lowest to the highest
+func QuickSort(a []int) []int {
 	if len(a) < 2 { return a }
-	biggestnum := a[len(a)/2]
+	biggestNum := a[len(a)/2]
 
 	var rightSlice []int
 	for _, v := range a {
-		if v > biggestnum {
-			biggestnum = v
+		if v > biggestNum {
+			biggestNum = v
 		}
 	}
 
-	for i := range a {
-		if a[i] < biggestnum {
-			rightSlice = append(rightSlice,a[i])
+	for _,v := range a {
+		if v < biggestNum {
+			rightSlice = append(rightSlice,v)
 		}
 	}
-	a = append(append([]int{}, qsort(rightSlice)...))
-	a = append(a,biggestnum)
+	a = append(append([]int{}, QuickSort(rightSlice)...))
+	a = append(a,biggestNum)
 	return a
 }
 
 func printArray(a []int) {
-	for i := 0; i < len(a); i++ {
-		fmt.Printf("%d ", a[i])
-	}
+	fmt.Println(a)
 }
 
 func main(){
 	slice := []int{9, 3, -4, 6, -5, 4}
 
-	s :=qsort(slice)
+	s :=QuickSort(slice)
 	printArray(s)
-
 }
