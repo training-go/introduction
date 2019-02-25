@@ -28,7 +28,8 @@ func QuickSort(a []int) []int {
 	return a
 }
 
-func printArray(a []int) {
+//Prints slice
+func PrintArray(a []int) {
 	fmt.Println(a)
 }
 
@@ -36,5 +37,5 @@ func main() {
 	slice := []int{9, 3, -4, 6, -5, 4}
 
 	s := QuickSort(slice)
-	printArray(s)
+	PrintArray(s)
 }
