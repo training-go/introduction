@@ -2,7 +2,8 @@ package main
 
 import "fmt"
 
-func greatestDivisor(a, b int) int {
+//Finds the greatest divisor between two numbers
+func GreatestDivisor(a, b int) int {
 	if a == 0 {
 		return b
 	}
@@ -12,11 +13,11 @@ func greatestDivisor(a, b int) int {
 			a = a - b
 			continue
 		}
-			b = b - a
+		b = b - a
 	}
 	return a
 }
 
 func main() {
-	fmt.Print(greatestDivisor(21, 9))
+	fmt.Print(GreatestDivisor(21, 9))
 }
