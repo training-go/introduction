@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-//Finds the greatest divisor between two numbers
+// GreatestDivisor returns the greatest divisor between two numbers
 func GreatestDivisor(a, b int) int {
 	if a == 0 {
 		return b
