@@ -37,11 +37,3 @@ func PrintArray(a []int) {
 		fmt.Printf("%d ", a[i])
 	}
 }
-
-func main() {
-	slice := []int{9, 3, -4, 6, -5, 3}
-
-	QuickSort(slice)
-	PrintArray(slice)
-
-}
